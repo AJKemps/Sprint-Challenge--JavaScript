@@ -17,8 +17,20 @@ function myFunction() {
 myFunction();
 
 // Explanation: 
-
+// The nested function can acess the variable 'internal' because of closure. In Javascript, functions are allowed to
+// move up to parent function scopes in search of variables that are undefined in the local function scope.
+// However, Javascript does not allow the function to move down scope into any nested/child scopes. One way only!
 
 /* Task 2: Counter */
 
 /* Create a function called `sumation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+
+function sumation (num) {
+  let counter = 0;
+  for (let i = 1; i <= num; i++) {
+    counter += i;
+  }
+  return counter;
+}
+
+console.log(sumation(4));
